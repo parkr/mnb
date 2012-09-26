@@ -32,7 +32,7 @@ MNB = function(){
                     for(var t=0; t<show["TrackListing"].length; t++){
                         tracks += mnb.trackTmpl.template(show["TrackListing"][t]);
                     }
-                    playlists.append(mnb.playlistTmpl({
+                    playlists.append(mnb.playlistTmpl.template({
                         showDate: show["Show"]["date"],
                         tracks: tracks
                     }));
