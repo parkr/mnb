@@ -26,10 +26,11 @@ MNB = function(){
             dataType: "json",
             success: function(data){
                 var playlists = $("#playlists"), tracks = null, show, track;
-                for(show in data){
+                for(var i=0; i<data.length; i++){
+                    show = data[i];
                     tracks = "";
-                    for(track in show["TrackListing"]){
-                        tracks += mnb.trackTmpl.template(track);
+                    for(var t=0; t<show["TrackListing"].length; t++){
+                        tracks += mnb.trackTmpl.template(show["TrackListing"][t]);
                     }
                     playlists.append(mnb.playlistTmpl({
                         showDate: show["Show"]["date"],
