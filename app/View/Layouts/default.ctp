@@ -43,7 +43,7 @@
         <script type="text/javascript" src="http://wvbr.com/js/util-functions.js"></script>
         <script type="text/javascript" src="http://wvbr.com/js/clear-default-text.js"></script>
         <script src="http://mnb.wvbr.com/js/jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="http://mnb.wvbr.com/js/jquery.slides.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="http://mnb.wvbr.com/js/jquery.slides.js" type="text/javascript" charset="utf-8"></script>
         <!-- HTML5 Podcast Elements -->
         <!-- WVBR Javascript Library -->
         <script type="text/javascript" src="http://wvbr.com/js/wvbrfunctions.js"></script>
