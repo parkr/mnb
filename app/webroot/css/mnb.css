@@ -1,0 +1,6 @@
+.playlist {
+	display: none;
+}
+.playlist:first-child {
+	display: block;
+}

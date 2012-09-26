@@ -43,7 +43,14 @@ class PagesController extends AppController {
  *
  * @var array
  */
-	public $uses = array();
+	public $uses = array('Show', 'AlbumCover');
+	
+	
+	public function home(){
+		// the main page for mnb
+		$this->set('shows', $this->Show->find('all'));
+		$this->set('album_covers', $this->AlbumCover->find('all'));
+	}
 
 /**
  * Displays a view
