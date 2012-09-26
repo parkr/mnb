@@ -5,7 +5,7 @@ from datetime import datetime
 
 def parse_listing_into_sql(filename):
 	f = open(filename, "rb")
-	current_show_id = 0
+	current_show_id = 30
 	for i, line in enumerate(f.readlines()):
 		if line.strip().split(" ")[0] in ["January", "Jan", "February", "Feb", "March", "Mar", "April", "Apr", "May", "June", "July", "August", "Aug", "September", "Sept", "Sep", "October", "Oct", "November", "Nov", "December", "Dec"]:
 			# a show
@@ -15,7 +15,7 @@ def parse_listing_into_sql(filename):
 				dateobj = datetime.strptime(line, "%B %d")
 			except(ValueError):
 				dateobj = datetime.strptime(line, "%b %d")
-			if dateobj.month >= 1 and dateobj.month <= 6:
+			if dateobj.month >= 1 and dateobj.month <= 9:
 				dateobj = dateobj.replace(year=2012)
 			else:
 				dateobj = dateobj.replace(year=2011)
