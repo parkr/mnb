@@ -13,7 +13,7 @@ class ShowsController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Show->recursive = 0;
+		$this->Show->recursive = 1;
 		$this->set('shows', $this->paginate());
 	}
 
