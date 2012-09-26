@@ -39,6 +39,11 @@ MNB = function(){
                 }
             }
         });
+        $('#shows').change(function(){
+           var changeTo = $(this).val();
+           $(".playlist.current").removeClass('current');
+           $('#'+changeTo).addClass('current');
+        });
     }
 }
 

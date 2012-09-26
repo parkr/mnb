@@ -67,7 +67,7 @@
 		<?php endforeach; ?>
 	</select>
 	<div id="playlists">
-		<div class="playlist" id="<?php echo $shows[0]['Show']['date']; ?>">
+		<div class="playlist current" id="<?php echo $shows[0]['Show']['date']; ?>">
 			<?php foreach($shows[0]['TrackListing'] as $track): ?>
 				<?php echo $track['artist'] . ' &mdash; ' . $track['title']; ?><br />
 			<?php endforeach; ?>

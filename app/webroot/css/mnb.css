@@ -1,6 +1,6 @@
 .playlist {
 	display: none;
 }
-.playlist:first-child {
+.playlist.current {
 	display: block;
 }
