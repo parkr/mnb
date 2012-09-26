@@ -1,3 +1,3 @@
 <?php
-json_encode($shows);
+echo json_encode($shows);
 ?>
