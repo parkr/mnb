@@ -17,12 +17,25 @@ String.prototype.template = function(data) {
 };
 
 MNB = function(){
+    this.playlistTmpl = '<div class="playlist" id="${showDate}">${tracks}</div>';
+    this.trackTmpl    = '<span class="track">${artist} &mdash; ${title}</span><br />'
     this.loadPlaylists = function(){
+        var mnb = this;
         $.ajax({
             url: "/shows/index.json",
             dataType: "json",
             success: function(data){
-                console.log(data);
+                var playlists = $("#playlists"), tracks = null;
+                for(show in data){
+                    tracks = "";
+                    for(track in show["TrackListing"]){
+                        tracks += mnb.trackTmpl.template(track);
+                    }
+                    playlists.append(mnb.playlistTmpl({
+                        showDate: show["Show"]["date"],
+                        tracks: tracks
+                    }));
+                }
             }
         });
     }
