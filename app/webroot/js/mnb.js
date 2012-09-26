@@ -18,7 +18,7 @@ String.prototype.template = function(data) {
 
 MNB = function(){
     this.playlistTmpl = '<div class="playlist" id="${showDate}">${tracks}</div>';
-    this.trackTmpl    = '<span class="track">${artist} &mdash; ${title}</span><br />'
+    this.trackTmpl    = '<span class="track">${artist} &mdash; ${title}</span><br />';
     this.loadPlaylists = function(){
         var mnb = this;
         $.ajax({
