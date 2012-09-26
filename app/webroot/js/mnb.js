@@ -26,7 +26,7 @@ MNB = function(){
             dataType: "json",
             success: function(data){
                 var playlists = $("#playlists"), tracks = null, show, track;
-                for(var i=0; i<data.length; i++){
+                for(var i=1; i<data.length; i++){ // start at 1 because first has already been printed by PHP
                     show = data[i];
                     tracks = "";
                     for(var t=0; t<show["TrackListing"].length; t++){
