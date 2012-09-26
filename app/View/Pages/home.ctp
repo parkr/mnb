@@ -42,7 +42,13 @@
         </span>
     </span>
 </p>
-<p style="text-align: center; ">&nbsp;</p>
+<div id="album_covers">
+  <div id="slides">
+    <?php foreach($album_covers as $album): ?>
+      <div class="slide"></div>
+    <?php endforeach; ?>
+  </div>
+</div>
 <p style="text-align: center; ">
     <span>
         <span style="font-size: 18px; ">
