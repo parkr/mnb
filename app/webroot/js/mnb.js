@@ -25,7 +25,7 @@ MNB = function(){
             url: "/shows/index.json",
             dataType: "json",
             success: function(data){
-                var playlists = $("#playlists"), tracks = null;
+                var playlists = $("#playlists"), tracks = null, show, track;
                 for(show in data){
                     tracks = "";
                     for(track in show["TrackListing"]){
