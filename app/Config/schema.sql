@@ -1,9 +1,11 @@
 USE db433094351;
 
+# DROP TABLE album_covers;
 CREATE TABLE album_covers (
 id int(11) unsigned primary key auto_increment NOT NULL,
 artist varchar(255) NOT NULL,
 album varchar(255) NOT NULL,
+filepath text NOT NULL,
 date_released DATE DEFAULT NULL,
 date_added DATE NOT NULL
 ) CHARACTER SET = utf8;
