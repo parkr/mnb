@@ -14,7 +14,7 @@ class ShowsController extends AppController {
  */
 	public function index() {
 		$this->Show->recursive = 1;
-		$this->set('shows', $this->paginate());
+		$this->set('shows', $this->Show->find('all', array('order' => array('Show.date DESC'))));
 	}
 
 /**

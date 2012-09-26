@@ -48,7 +48,7 @@ class PagesController extends AppController {
 	
 	public function home(){
 		// the main page for mnb
-		$this->set('shows', $this->Show->find('all'));
+		$this->set('shows', $this->Show->find('all', array('order' => array('Show.date DESC'))));
 		$this->set('album_covers', $this->AlbumCover->find('all'));
 	}
 
