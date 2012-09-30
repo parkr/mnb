@@ -1,6 +1,7 @@
-.playlist {
-	display: none;
-}
-.playlist.current {
-	display: block;
-}
+.playlist { display: none; }
+
+.playlist.current { display: block; }
+
+#album_covers .slides_container { width: 702px; height: 140px; margin: 0 auto; }
+#album_covers .slides_container .slide .cover { display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; width: 140px; margin: 0; padding: 0; }
+#album_covers .slides_container .slide .cover img { margin: 0; padding: 0; }
