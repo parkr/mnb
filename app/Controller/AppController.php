@@ -37,13 +37,17 @@ class AppController extends Controller {
     $this->Auth->deny('*');
     $this->Auth->allow('admin_login');
   }
+  
+  function isAuthorized(){
+      return true;
+  }
 
   public $components = array(
     'Session', 
     'RequestHandler', 
     'Auth' => array(
       'loginRedirect' => array('controller' => 'shows', 'action' => 'index', 'admin' => true),
-      'logoutRedirect' => array('controller' => 'pages', 'action' => 'home'),
+      'logoutRedirect' => array('controller' => 'pages', 'action' => 'home', 'admin' => false),
       'authorize' => array('Controller'),
       'authenticate' => array(
         'Form' => array(
