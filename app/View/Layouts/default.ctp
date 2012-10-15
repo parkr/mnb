@@ -17,8 +17,7 @@
         <meta property="og:site_name" content="WVBR 93.5 FM" />
         <meta property="fb:admins" content="1572450458" />
         <title>Monday Night Bromance | WVBR 93.5 FM - Ithaca's Real Rock Radio Station</title>
-        <link
-        rel="icon" href="http://www.wvbr.com/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="http://www.wvbr.com/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="http://www.wvbr.com/favicon.ico" type="image/x-icon"
         />
         <!-- Main Stylesheet -->
