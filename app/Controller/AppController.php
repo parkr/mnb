@@ -33,10 +33,24 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-    function beforeFilter() {
-        $this->Auth->deny('*');
-        $this->Auth->allow('admin_login');
-    }
-  public $components = array('Session', 'RequestHandler', 'Auth');
+  function beforeFilter() {
+    $this->Auth->deny('*');
+    $this->Auth->allow('admin_login');
+  }
+
+  public $components = array(
+    'Session', 
+    'RequestHandler', 
+    'Auth' => array(
+      'loginRedirect' => array('controller' => 'shows', 'action' => 'index', 'admin' => true),
+      'logoutRedirect' => array('controller' => 'pages', 'action' => 'home'),
+      'authorize' => array('Controller'),
+      'authenticate' => array(
+        'Form' => array(
+          'fields' => array('username' => 'email')
+        )
+      )
+    )
+  );
 
 }
