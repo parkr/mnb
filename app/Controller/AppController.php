@@ -33,6 +33,10 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-  public $components = array('Session', 'RequestHandler');
+    function beforeFilter() {
+        $this->Auth->deny('*');
+        $this->Auth->allow('admin_login');
+    }
+  public $components = array('Session', 'RequestHandler', 'Auth');
 
 }
