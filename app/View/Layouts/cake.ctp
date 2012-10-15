@@ -27,11 +27,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		Monday Night Bromance:
         WVBR
 	</title>
+    <link rel="icon" href="http://www.wvbr.com/favicon.ico" type="image/x-icon" />
 	<?php
-		echo $this->Html->meta('icon');
-
 		echo $this->Html->css('cake.generic');
-
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -40,12 +38,11 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link('MNB Content Management System', array('/', 'admin' => true)); ?></h1>
+			<h1><?php echo $this->Html->link('MNB Content Management System', array('controller' => 'track_listings', 'action' => 'index', 'admin' => true)); ?></h1>
 		</div>
 		<div id="content">
-
+            <h4 style="text-align:right;"><?php echo $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout')); ?></h4>
 			<?php echo $this->Session->flash(); ?>
-
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer">
@@ -57,6 +54,5 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			?>
 		</div>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
 </body>
 </html>
