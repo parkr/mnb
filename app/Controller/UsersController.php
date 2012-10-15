@@ -9,8 +9,28 @@ class UsersController extends AppController {
 
     public function admin_login(){
         $this->layout = "cake";
-        
+		$this->set('title_for_layout', 'Login');
+		if ($this->request->is('post')) {
+			if ($this->Auth->login()){
+                return $this->redirect($this->Auth->redirect());
+			} else {
+                $this->Session->setFlash(__('Username or password is incorrect or you are not a registered user.'), 'default', array(), 'auth');
+                // Log error.
+				CakeLog::write('login_error', $this->request->data['User']['email'].' tried to login with hashed password '.AuthComponent::password($this->request->data['User']['password']).' and failed.');
+			}
+		}
     }
+    
+	public function admin_logout() {
+		$redirect_to = $this->Auth->logout();
+		if($redirect_to){
+			$this->Session->setFlash('You have been successfully logged out.');
+			$this->redirect($redirect_to);
+		}else{
+			$this->Session->setFlash('You could not be logged out.');
+			$this->redirect($redirect_to);
+		}
+	}
 
 /**
  * admin_index method
