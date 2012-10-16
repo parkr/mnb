@@ -43,7 +43,19 @@ class AlbumCoversController extends AppController {
         $this->layout = "cake";
 		if ($this->request->is('post')) {
 			$this->AlbumCover->create();
-			if ($this->AlbumCover->save($this->request->data)) {
+            
+            // Upload file
+            $uploaded_safely = true;
+            $file = $this->request->data['AlbumCover']['file'];
+            $this->request->data['AlbumCover']['filepath'] = '/img/album_covers/'.urlencode($file['name']);
+            $remote_path = (dirname(WWW_ROOT).'/webroot'.$this->request->data['AlbumCover']['filepath']);
+            echo $remote_path;
+            print_r($this->request->data);
+            if(!move_uploaded_file($file['tmp_name'], $remote_path)){
+                $uploaded_safely = false;
+            }
+            
+			if ($this->AlbumCover->save($this->request->data) && $uploaded_safely) {
 				$this->Session->setFlash(__('The album cover has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {

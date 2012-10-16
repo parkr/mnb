@@ -1,11 +1,12 @@
 <div class="albumCovers form">
-<?php echo $this->Form->create('AlbumCover'); ?>
+<?php echo $this->Form->create('AlbumCover', array('type' => 'file')); ?>
 	<fieldset>
 		<legend><?php echo __('Admin Add Album Cover'); ?></legend>
 	<?php
 		echo $this->Form->input('artist');
 		echo $this->Form->input('album');
-		echo $this->Form->input('filepath');
+        echo 'Image file:<br/>';
+		echo $this->Form->file('file');
 		echo $this->Form->input('date_released');
 		echo $this->Form->input('date_added');
 	?>
