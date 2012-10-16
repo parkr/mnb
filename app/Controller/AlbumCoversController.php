@@ -6,7 +6,22 @@ App::uses('AppController', 'Controller');
  * @property AlbumCover $AlbumCover
  */
 class AlbumCoversController extends AppController {
-
+    
+    public function beforeFilter(){
+        parent::beforeFilter();
+        $this->Auth->allow('index');
+    }
+    
+/**
+ * index method
+ *
+ * @return void
+ */
+  public function index() {
+    $this->AlbumCover->recursive = 0;
+    $this->set('albumCovers', $this->paginate());
+  }
+ 
 /**
  * admin_index method
  *
