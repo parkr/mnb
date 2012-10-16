@@ -15,5 +15,8 @@
 	<ul>
 
 		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
+        <li><?php echo $this->Html->link(__('List Album Covers'), array('controller' => 'album_covers', 'action' => 'index')); ?></li>
+        <li><?php echo $this->Html->link(__('List Track Listing'), array('controller' => 'track_listings', 'action' => 'index')); ?></li>
+        <li><?php echo $this->Html->link(__('List Shows'), array('controller' => 'shows', 'action' => 'index')); ?></li>
 	</ul>
 </div>

@@ -2,7 +2,6 @@
 	<h2><?php echo __('Album Covers'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('artist'); ?></th>
 			<th><?php echo $this->Paginator->sort('album'); ?></th>
 			<th><?php echo $this->Paginator->sort('filepath'); ?></th>
@@ -13,7 +12,6 @@
 	<?php
 	foreach ($albumCovers as $albumCover): ?>
 	<tr>
-		<td><?php echo h($albumCover['AlbumCover']['id']); ?>&nbsp;</td>
 		<td><?php echo h($albumCover['AlbumCover']['artist']); ?>&nbsp;</td>
 		<td><?php echo h($albumCover['AlbumCover']['album']); ?>&nbsp;</td>
 		<td><?php echo h($albumCover['AlbumCover']['filepath']); ?>&nbsp;</td>
@@ -46,5 +44,8 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Album Cover'), array('action' => 'add')); ?></li>
+        <li><?php echo $this->Html->link(__('List Track Listing'), array('controller' => 'track_listings', 'action' => 'index')); ?></li>
+        <li><?php echo $this->Html->link(__('List Shows'), array('controller' => 'shows', 'action' => 'index')); ?></li>
+        <li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?></li>
 	</ul>
 </div>

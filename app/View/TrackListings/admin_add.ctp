@@ -17,5 +17,7 @@
 		<li><?php echo $this->Html->link(__('List Track Listings'), array('action' => 'index')); ?></li>
 		<li><?php echo $this->Html->link(__('List Shows'), array('controller' => 'shows', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Show'), array('controller' => 'shows', 'action' => 'add')); ?> </li>
+        <li><?php echo $this->Html->link(__('List Album Covers'), array('controller' => 'album_covers', 'action' => 'index')); ?></li>
+        <li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?></li>
 	</ul>
 </div>
