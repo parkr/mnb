@@ -4,6 +4,7 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
+            <th><?php echo $this->Paginator->sort('text'); ?></th>
 			<th><?php echo $this->Paginator->sort('date'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
@@ -12,6 +13,7 @@
 	<tr>
 		<td><?php echo h($show['Show']['id']); ?>&nbsp;</td>
 		<td><?php echo h($show['Show']['name']); ?>&nbsp;</td>
+        <td><?php echo h($show['Show']['text']); ?>&nbsp;</td>
 		<td><?php echo h($show['Show']['date']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $show['Show']['id'])); ?>

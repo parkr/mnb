@@ -4,6 +4,7 @@
 		<legend><?php echo __('Admin Add Show'); ?></legend>
 	<?php
 		echo $this->Form->input('name');
+        echo $this->Form->input('text');
 		echo $this->Form->input('date');
 	?>
 	</fieldset>
