@@ -62,7 +62,7 @@
 	</select>
 	<div id="playlists">
 		<div class="playlist current" id="<?php echo $shows[0]['Show']['date']; ?>">
-			<?php echo $shows[0]['Show']['text']; ?>
+			<?php echo nl2br($shows[0]['Show']['text']); ?>
 		</div>
 	</div>
 </div>
