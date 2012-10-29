@@ -28,14 +28,10 @@ MNB = function(){
                 var playlists = $("#playlists"), tracks = null, show, track;
                 for(var i=1; i<data.length; i++){ // start at 1 because first has already been printed by PHP
                     show = data[i];
-                    tracks = "";
-                    for(var t=0; t<show["TrackListing"].length; t++){
-                        tracks += mnb.trackTmpl.template(show["TrackListing"][t]);
-                    }
                     playlists.append(mnb.playlistTmpl.template({
                         showDate: show["Show"]["date"],
-                        tracks: tracks
-                    }));
+                        tracks: show["Show"]["text"]
+                    }).replace(/\n/g, "<br>"));
                 }
             }
         });
